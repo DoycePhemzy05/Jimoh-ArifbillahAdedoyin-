@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div>
+        <h1>Weather App</h1>
+        <p>Search any city to see the current weather, wind speed, and a short 3-day Weather forecast</p>
+      </div>
+    </header>
+
+    <section class="search-panel" aria-labelledby="search-heading">
+      <div class="search-row">
+        <label class="visually-hidden" for="city-input">City name</label>
+        <input id="city-input" type="search" placeholder="Enter a city name, e.g. London" autocomplete="off" />
+        <button id="search-button" type="button">Check weather</button>
+        <button id="location-button" type="button" title="Use current location" aria-label="Get weather for current location">📍</button>
+      </div>
+
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <label for="unit-toggle" style="font-size: 0.9rem; color: var(--text-secondary);">Temperature unit:</label>
+        <select id="unit-toggle" style="padding: 4px 8px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-secondary);">
+          <option value="celsius">°C</option>
+          <option value="fahrenheit">°F</option>
+        </select>
+      </div>
+
+      <p class="info-text">If a city returns no result, try adding the country or use a nearby major city.</p>
+      <p id="message" class="message" aria-live="polite"></p>
+
+      <details id="recent-searches-container" style="margin-top: 16px;">
+        <summary style="cursor: pointer; color: var(--text-secondary); font-size: 0.9rem;">Recent searches</summary>
+        <div id="recent-searches" style="margin-top: 8px;"></div>
+      </details>
+    </section>
+
+    <section id="weather-section" class="weather-display" hidden>
+      <article class="weather-card">
+        <div class="weather-summary">
+          <div class="weather-main">
+            <div class="weather-icon" id="weather-icon">☀️</div>
+            <div>
+              <p id="location" class="location">City, Country</p>
+              <h2 id="temperature" class="temperature">--°C</h2>
+              <p id="description" class="description">Clear sky</p>
+            </div>
+          </div>
+          <div class="details-grid">
+            <div class="detail-pill">
+              <strong id="wind-speed">-- km/h --</strong>
+              <span>Wind speed & direction</span>
+            </div>
+            <div class="detail-pill">
+              <strong id="pressure">-- hPa</strong>
+              <span>Air pressure</span>
+            </div>
+            <div class="detail-pill">
+              <strong id="local-time">--</strong>
+              <span>Local time</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="forecast-card">
+        <h2 style="margin:0 0 16px; font-size:1.2rem;">3-day forecast</h2>
+        <div id="forecast-grid" class="forecast-grid"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
