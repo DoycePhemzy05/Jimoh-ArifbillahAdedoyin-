@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weather App</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,7 +15,6 @@
         <p>Search any city to see the current weather, wind speed, and a short 3-day Weather forecast</p>
       </div>
     </header>
-
     <section class="search-panel" aria-labelledby="search-heading">
       <div class="search-row">
         <label class="visually-hidden" for="city-input">City name</label>
@@ -33,6 +33,10 @@
 
       <p class="info-text">If a city returns no result, try adding the country or use a nearby major city.</p>
       <p id="message" class="message" aria-live="polite"></p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
+        <button id="export-csv-btn" type="button">Export CSV</button>
+        <button id="clear-searches-btn" type="button">Clear recent searches</button>
+      </div>
 
       <details id="recent-searches-container" style="margin-top: 16px;">
         <summary style="cursor: pointer; color: var(--text-secondary); font-size: 0.9rem;">Recent searches</summary>
