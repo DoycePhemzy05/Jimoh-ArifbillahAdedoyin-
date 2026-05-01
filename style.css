@@ -717,24 +717,24 @@ header p {
   gap: var(--space-sm);
   transition: var(--transition-base);
   cursor: default;
+}
 
-  &:hover {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 1px var(--accent), 0 4px 12px var(--accent-soft);
-    transform: translateY(-1px);
-  }
+.detail-pill:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 4px 12px var(--accent-soft);
+  transform: translateY(-1px);
+}
 
-  strong {
-    font-size: 1.15rem;
-    color: var(--text-primary);
-    font-weight: 600;
-  }
+.detail-pill strong {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
 
-  span {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
+.detail-pill span {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 /* ===========================
@@ -745,8 +745,10 @@ header p {
   margin: 0 0 var(--space-lg);
   font-size: 1.3rem;
   color: var(--text-primary);
+}
 
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
+  .forecast-card h2 {
     font-size: 1.1rem;
   }
 }
@@ -755,8 +757,10 @@ header p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   gap: var(--space-lg);
+}
 
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
+  .forecast-grid {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: var(--space-md);
   }
@@ -770,50 +774,52 @@ header p {
   text-align: center;
   transition: var(--transition-base);
   cursor: default;
+}
 
-  &:hover {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 1px var(--accent), 0 8px 24px var(--accent-soft);
-    transform: translateY(-2px);
-  }
+.forecast-day:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 8px 24px var(--accent-soft);
+  transform: translateY(-2px);
+}
 
-  strong {
-    display: block;
-    margin-bottom: var(--space-sm);
-    font-size: 0.95rem;
-    color: var(--text-primary);
-    font-weight: 600;
-  }
+.forecast-day strong {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
 
-  .icon {
-    font-size: 2rem;
-    margin: var(--space-sm) 0;
-    display: block;
-    animation: bounce 2s ease-in-out infinite;
-  }
+.forecast-day .icon {
+  font-size: 2rem;
+  margin: var(--space-sm) 0;
+  display: block;
+  animation: bounce 2s ease-in-out infinite;
+}
 
-  small {
-    color: var(--text-secondary);
-    display: block;
-    font-size: 0.85rem;
-    line-height: 1.5;
-    margin-top: var(--space-sm);
-  }
+.forecast-day small {
+  color: var(--text-secondary);
+  display: block;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-top: var(--space-sm);
+}
 
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
+  .forecast-day {
     padding: var(--space-md);
+  }
 
-    strong {
-      font-size: 0.85rem;
-    }
+  .forecast-day strong {
+    font-size: 0.85rem;
+  }
 
-    .icon {
-      font-size: 1.6rem;
-    }
+  .forecast-day .icon {
+    font-size: 1.6rem;
+  }
 
-    small {
-      font-size: 0.8rem;
-    }
+  .forecast-day small {
+    font-size: 0.8rem;
   }
 }
 
